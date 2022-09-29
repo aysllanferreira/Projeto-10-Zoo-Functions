@@ -1,7 +1,7 @@
 const data = require('../data/zoo_data');
 
 function getAnimalMap(options) {
-  // seu código aqui
+  // nada ainda, dificilll...
 }
 
 module.exports = getAnimalMap;
