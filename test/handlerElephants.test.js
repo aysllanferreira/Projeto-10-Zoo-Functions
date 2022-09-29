@@ -8,4 +8,8 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica se existe um elefanto com um nome especifico.', () => {
     expect(handlerElephants('names')).toContain('Bea');
   });
+
+  it('Verifica qual eh a idade media dos elefantes do zoo.', () => {
+    expect(handlerElephants('averageAge')).toBe(10.5);
+  });
 });
