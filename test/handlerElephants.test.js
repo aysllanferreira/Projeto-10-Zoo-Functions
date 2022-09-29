@@ -25,5 +25,7 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants(312)).toBe('Parâmetro inválido, é necessário uma string');
   });
 
-  
+  it('Verifica se handlerElephants eh uma funcao.', () => {
+    expect(typeof handlerElephants).toBe('function');
+  });
 });
