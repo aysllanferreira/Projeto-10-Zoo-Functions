@@ -32,4 +32,8 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica a localizacao da jaula dos elefantes.', () => {
     expect(handlerElephants('location')).toBe('NW');
   });
+
+  it('Verifica a popularidade dos elefantes.', () => {
+    expect(handlerElephants('popularity')).toBe(5);
+  });
 });
