@@ -12,4 +12,12 @@ describe('Testes da função getOpeningHours', () => {
   it('Verifica se o zoo esta aberto num dia que deveria estar.', () => {
     expect(getOpeningHours('Tuesday', '09:00-AM')).toBe('The zoo is open');
   });
+
+  it('Verifica se o zoo esta fechado num horario que deveria estar.', () => {
+    expect(getOpeningHours('Wednesday', '10:00-PM')).toBe('The zoo is closed');
+  });
+
+  it('Verifca se o parametro do dia foi passado corretamente.', () => {
+    expect(() => getOpeningHours('Thu', '09:00-AM')).toThrow('The day must be valid. Example: Monday');
+  });
 });
