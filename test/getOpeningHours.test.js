@@ -32,4 +32,12 @@ describe('Testes da função getOpeningHours', () => {
   it('Verifica se os minutos sao um numero', () => {
     expect(() => getOpeningHours('Tuesday', '09:c0-AM')).toThrow('The minutes should represent a number');
   });
+
+  it('Verifico se a hora vai ate 12 apenas.', () => {
+    expect(() => getOpeningHours('Sunday', '15:00-AM')).toThrow('The hour must be between 0 and 12');
+  });
+
+  it('Verifico se os minutos vai ate 59 apenas.', () => {
+    expect(() => getOpeningHours('Sunday', '12:79-AM')).toThrow('The minutes must be between 0 and 59');
+  });
 });
