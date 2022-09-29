@@ -12,4 +12,8 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica qual eh a idade media dos elefantes do zoo.', () => {
     expect(handlerElephants('averageAge')).toBe(10.5);
   });
+
+  it('Verifica quando nao ha parametros se a funcao retorna undefined', () => {
+    expect(handlerElephants()).toBe(undefined);
+  });
 });
