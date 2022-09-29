@@ -28,4 +28,8 @@ describe('Testes da função getOpeningHours', () => {
   it('Verifica se a hora eh um numero.', () => {
     expect(() => getOpeningHours('Saturday', 'C9:00-AM')).toThrow('The hour should represent a number');
   });
+
+  it('Verifica se os minutos sao um numero', () => {
+    expect(() => getOpeningHours('Tuesday', '09:c0-AM')).toThrow('The minutes should represent a number');
+  });
 });
