@@ -16,4 +16,8 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica quando nao ha parametros se a funcao retorna undefined', () => {
     expect(handlerElephants()).toBe(undefined);
   });
+
+  it('Verifica se quando passa um nome inexistente retorna null.', () => {
+    expect(handlerElephants('Yoga')).toBe(null);
+  });
 });
