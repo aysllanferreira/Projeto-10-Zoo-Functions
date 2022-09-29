@@ -5,7 +5,7 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('count')).toBe(4);
   });
 
-  it('Verifica se existe um elefanto com um nome especifico.', () => {
+  it('Verifica se existe um elefante com um nome especifico.', () => {
     expect(handlerElephants('names')).toContain('Bea');
   });
 
@@ -20,4 +20,10 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica se quando passa um nome inexistente retorna null.', () => {
     expect(handlerElephants('Yoga')).toBe(null);
   });
+
+  it('Verifica se o parametro passado eh uma string.', () => {
+    expect(handlerElephants(312)).toBe('Parâmetro inválido, é necessário uma string');
+  });
+
+  
 });
