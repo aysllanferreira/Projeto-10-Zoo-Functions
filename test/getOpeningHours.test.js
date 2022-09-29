@@ -47,7 +47,7 @@ describe('Testes da função getOpeningHours', () => {
     expect(getOpeningHours('Tuesday', '12:00-AM')).toBe(closed);
   });
 
-  it('Verifica se quando passa parametro vazio, retorna os dias da semana.', () => {
+  it('Verifica se quando passa parametro vazio, retorna os dias da semana!', () => {
     const obj = { Friday: { close: 8, open: 10 },
       Monday: { close: 0, open: 0 },
       Saturday: { close: 10, open: 8 },
