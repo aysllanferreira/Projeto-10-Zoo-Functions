@@ -28,4 +28,8 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica se handlerElephants eh uma funcao.', () => {
     expect(typeof handlerElephants).toBe('function');
   });
+
+  it('Verifica a localizacao da jaula dos elefantes.', () => {
+    expect(handlerElephants('location')).toBe('NW');
+  });
 });
