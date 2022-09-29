@@ -36,4 +36,8 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica a popularidade dos elefantes.', () => {
     expect(handlerElephants('popularity')).toBe(5);
   });
+
+  it('Verifica quais dias esta disponivel ver os elefantes.', () => {
+    expect(handlerElephants('availability')).toStrictEqual(['Friday', 'Saturday', 'Sunday', 'Tuesday']);
+  });
 });
