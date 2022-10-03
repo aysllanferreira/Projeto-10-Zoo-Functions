@@ -2,24 +2,17 @@ const data = require('../data/zoo_data');
 
 const { species, employees } = data;
 
-const handleLocation = (param) => {
+const putLocation = (location) => species.find(({ id }) => id === location).location;
+const putName = (name) => species.find(({ id }) => id === name).name;
+
+const handleLocAnimal = (param, callback) => {
   const getPeople = employees.find(({ id, firstName, lastName }) =>
     param.id === id || param.name === firstName || param.name === lastName).responsibleFor;
   const layLocation = [];
-  getPeople.forEach((location) => {
-    layLocation.push(species.find(({ id }) => id === location).location);
+  getPeople.forEach((thing) => {
+    layLocation.push(callback(thing));
   });
   return layLocation;
-};
-
-const handleAnimals = (param) => {
-  const getAnimals = employees.find(({ id, firstName, lastName }) =>
-    param.id === id || param.name === firstName || param.name === lastName).responsibleFor;
-  const layAnimal = [];
-  getAnimals.forEach((animal) => {
-    layAnimal.push(species.find(({ id }) => id === animal).name);
-  });
-  return layAnimal;
 };
 
 const findPeople = (param) => {
@@ -29,8 +22,8 @@ const findPeople = (param) => {
   const answer = {
     id: people.id,
     fullName: `${people.firstName} ${people.lastName}`,
-    species: handleAnimals(param),
-    locations: handleLocation(param),
+    species: handleLocAnimal(param, putName),
+    locations: handleLocAnimal(param, putLocation),
   };
   return answer;
 };
@@ -41,8 +34,8 @@ const handleAll = () => {
     newCounter.push({
       id: people.id,
       fullName: `${people.firstName} ${people.lastName}`,
-      species: handleAnimals(people),
-      locations: handleLocation(people),
+      species: handleLocAnimal(people, putName),
+      locations: handleLocAnimal(people, putLocation),
     });
     return newCounter;
   }, []);
